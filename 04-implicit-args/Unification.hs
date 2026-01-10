@@ -28,7 +28,7 @@ lift :: PartialRenaming -> PartialRenaming
 lift (PRen dom cod ren) =
   PRen (dom + 1) (cod + 1) (IM.insert (unLvl cod) dom ren)
 
--- | @invert : (Γ : Cxt) → (spine : Sub Δ Γ) → PRen Γ Δ@
+-- | @invert : (Γ : Cxt) → (spine : Sub Γ Δ) → PRen Δ Γ@
 invert :: Lvl -> Spine -> IO PartialRenaming
 invert gamma sp = do
 

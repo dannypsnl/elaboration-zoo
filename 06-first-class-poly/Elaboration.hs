@@ -101,7 +101,7 @@ lift (PRen occ dom cod ren) = PRen occ (dom + 1) (cod + 1) (IM.insert (unLvl cod
 skip :: PartialRenaming -> PartialRenaming
 skip (PRen occ dom cod ren) = PRen occ dom (cod + 1) ren
 
--- | @invert : (Γ : Cxt) → (spine : Sub Δ Γ) → PRen Γ Δ@
+-- | @invert : (Γ : Cxt) → (spine : Sub Γ Δ) → PRen Δ Γ@
 --   Optionally returns a pruning of nonlinear spine entries, if there's any.
 invert :: Lvl -> Spine -> IO (PartialRenaming, Maybe Pruning)
 invert gamma sp = do
